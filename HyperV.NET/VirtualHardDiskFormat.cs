@@ -5,6 +5,7 @@ namespace HyperV
     ///<summary>The file format of the virtual hard disk.</summary>
     public enum VirtualHardDiskFormat : UInt16
     {
+        Unknown = 0,
         ///<summary>Generation 1 virtual hard disk format.</summary>
         Vhd = 2,
 

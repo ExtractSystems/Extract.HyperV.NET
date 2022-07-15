@@ -366,6 +366,11 @@ namespace HyperV
                                 virtualHardDiskSettings["Format"] = virtualHardDriveDefinition.VirtualHardDisk.Format;
                                 virtualHardDiskSettings["MaxInternalSize"] = (UInt64)(virtualHardDriveDefinition.VirtualHardDisk.Size * 1073741824); // Bytes
                                 virtualHardDiskSettings["Path"] = virtualHardDriveDefinition.VirtualHardDisk.Path;
+                                if (virtualHardDriveDefinition.VirtualHardDisk.Type == VirtualHardDiskType.Differencing)
+                                {
+                                    virtualHardDiskSettings["ParentPath"] = virtualHardDriveDefinition.VirtualHardDisk.ParentPath;
+                                    virtualHardDiskSettings["MaxInternalSize"] = 0;
+                                }
                                 CreateVirtualHardDisk(virtualHardDiskSettings);
                                 virtualHardDiskSettings.Dispose();
 
