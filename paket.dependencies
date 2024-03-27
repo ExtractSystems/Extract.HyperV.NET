@@ -1,0 +1,15 @@
+source https://www.nuget.org/api/v2
+
+group net6.0
+
+source https://api.nuget.org/v3/index.json
+storage: none
+strategy: min
+
+condition: NET6_0
+framework: net6.0, net6.0-windows
+
+# use msbuild auto-redirects instead of paket's
+redirects: off
+
+nuget System.Management ~> 7.0
